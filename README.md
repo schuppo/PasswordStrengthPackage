@@ -18,7 +18,7 @@ This Validations provided include:
 
 ### Get the package
 
-Add the following in your composer.json:
+Add the following in your ```composer.json``:
 
 ``` json
 {
@@ -30,7 +30,7 @@ Add the following in your composer.json:
 
 ### Initialize the package
 
-To start using the package, you have to register it in the array-key 'providers' in ```app/config/app.php```:
+To start using the package, you have to add it to the arraykey ```providers`` in ```app/config/app.php```:
 
 ``` php
 // app/config/app.php
@@ -40,7 +40,9 @@ return array(
     // ...
 
     'providers' => array(
+
         // ...
+
         'Schuppo/PasswordStrength',
     );
 
@@ -57,8 +59,8 @@ Now Laravel's native ```Validator``` class is extended by three rules:
 - letters
 
 ### Example
-You can apply these rules as described in the [Validation Section of Laravel's website](http://laravel.com/docs/validation)
-``` <?php
+You can apply these rules as described in the [validation section on Laravel's website](http://laravel.com/docs/validation)
+``` php
 
 $v = Validator::make(
     'password' => '12345QWERTqwert',
@@ -75,11 +77,11 @@ Notice that you can validate any value with the new rules. This only reason why 
 
 #License
 
-This bundle is under the MIT license. See the complete license in the bundle:
+This package is under the MIT license. See the complete license:
 
 - [LICENSE](https://github.com/schuppo/PasswordStrengthPackage/LICENSE)
 
 
 ##Reporting Issues or Feature Requests
 
-Issues and feature requests are tracked on [GitHub](https://github.com/schuppo/PasswordStrengthPackage.git/issues).
+Issues and feature requests are tracked on [GitHub](https://github.com/schuppo/PasswordStrengthPackage/issues).
