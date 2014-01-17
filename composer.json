@@ -1,0 +1,23 @@
+{
+    "name": "schuppo/password-strength",
+    "description": "password strength validation for laravels validation class",
+    "authors": [
+        {
+            "name": "Oliver Schupp",
+            "email": "oliver.schupp@yahoo.de"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "illuminate/support": "4.1.x"
+    },
+    "require-dev": {
+        "illuminate/validation": "4.1.x"
+    },
+    "autoload": {
+        "psr-0": {
+            "Schuppo\\PasswordStrength": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
