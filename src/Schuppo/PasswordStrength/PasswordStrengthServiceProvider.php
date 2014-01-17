@@ -1,4 +1,4 @@
-<?php namespace Schuppo\PasswordStrength;
+<?php /*namespace Schuppo\PasswordStrength;*/
 
 use Illuminate\Support\ServiceProvider;
 

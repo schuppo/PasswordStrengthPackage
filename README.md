@@ -7,8 +7,8 @@ It is in a early stage of development but should fulfill its purpose.
 
 This Validations provided include:
 
-- minimum length
-- contains alphabetic and/or numeric characters
+- contains alphabetic
+- contains numeric characters
 - contains mixed case characters
 
 
@@ -27,6 +27,11 @@ Add the following in your ```composer.json``:
     }
 }
 ```
+Notice that you have to set in ```composer.json```
+``` json
+"minimum-stability": "dev"
+```
+Because it is in such an early stage it is not a good idea to use it in production environments. Seriously. (By the way, this is my first contribution on GitHub and to Laravel so don't be too harsh.)
 
 ### Initialize the package
 
@@ -71,9 +76,6 @@ $v->passes();   // returns true;
 ```
 
 Notice that you can validate any value with the new rules. This only reason why this package is called "Password Strength Package" is that it describes its foremose purpose.
-
-
-
 
 #License
 
