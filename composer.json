@@ -1,7 +1,14 @@
 {
     "name": "schuppo/password-strength",
     "description": "password strength validation for laravels validation class",
-    "keywords": "laravel laravel-4 laravel4 validation password strength",
+    "keywords": [
+        "laravel",
+        "laravel-4",
+        "laravel4",
+        "validation",
+        "password",
+        "strength"
+    ],
     "authors": [
         {
             "name": "Oliver Schupp",
