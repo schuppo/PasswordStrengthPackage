@@ -3,6 +3,8 @@ PasswordStrength Package
 
 This package provides a validator for ensuring strong passwords in Laravel 4 applications. It is influenced quite a lot by [PasswordStrengthBundle for Symfony 2](ttps://github.com/jbafford/PasswordStrengthBundle).
 
+It is in a early stage of development but should fulfill its purpose.
+
 This Validations provided include:
 
 - minimum length
@@ -10,16 +12,72 @@ This Validations provided include:
 - contains mixed case characters
 
 
-##Documentation
+#Documentation
 
-Documentation is available at [Resources/doc/index.md](https://github.com/jbafford/PasswordStrengthBundle/blob/master/Resources/doc/index.md)
+##Installation
+
+### Get the package
+
+Add the following in your composer.json:
+
+``` json
+{
+    "require": {
+        "schuppo/password-strength-package": "dev-master"
+    }
+}
+```
+
+### Initialize the package
+
+To start using the package, you have to register it in the array-key 'providers' in ```app/config/app.php```:
+
+``` php
+// app/config/app.php
+
+return array(
+
+    // ...
+
+    'providers' => array(
+        // ...
+        'Schuppo/PasswordStrength',
+    );
+
+    // ...
+);
+```
 
 
-##License
+##Usage
+Now Laravel's native ```Validator``` class is extended by three rules:
+
+- case_diff
+- numbers
+- letters
+
+### Example
+You can apply these rules as described in the [Validation Section of Laravel's website](http://laravel.com/docs/validation)
+``` <?php
+
+$v = Validator::make(
+    'password' => '12345QWERTqwert',
+    'password' => 'case_diff|numbers|letters')
+);
+
+$v->passes();   // returns true;
+```
+
+Notice that you can validate any value with the new rules. This only reason why this package is called "Password Strength Package" is that it describes its foremose purpose.
+
+
+
+
+#License
 
 This bundle is under the MIT license. See the complete license in the bundle:
 
-- [LICENSE](https://github.com/schuppo/PasswordStrength.git/LICENSE)
+- [LICENSE](https://github.com/schuppo/PasswordStrengthPackage/LICENSE)
 
 
 ##Reporting Issues or Feature Requests
