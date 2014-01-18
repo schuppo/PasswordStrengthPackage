@@ -2,7 +2,7 @@
 
 use \Illuminate\Validation\Validator;
 
-class PasswordStrength extends Validator implements PasswordStrengthInterface {
+class PasswordStrength extends Validator {
 
     public function __construct($translator, $data, $rules, $messages = null)
     {
