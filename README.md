@@ -23,7 +23,7 @@ Add the following in your `composer.json`:
 ``` json
 {
     "require": {
-        "schuppo/password-strength-package": "dev-master"
+        "schuppo/password-strength": "dev-master"
     }
 }
 ```
