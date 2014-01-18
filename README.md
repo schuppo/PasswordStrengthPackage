@@ -1,7 +1,7 @@
 PasswordStrength Package
 ================
 
-This package provides a validator for ensuring strong passwords in Laravel 4 applications. It is influenced quite a lot by [PasswordStrengthBundle for Symfony 2](ttps://github.com/jbafford/PasswordStrengthBundle).
+This package provides a validator for ensuring strong passwords in Laravel 4 applications. It is influenced quite a lot by [PasswordStrengthBundle for Symfony 2](https://github.com/jbafford/PasswordStrengthBundle).
 
 It is in a early stage of development but should fulfill its purpose.
 
@@ -18,7 +18,7 @@ This Validations provided include:
 
 ### Get the package
 
-Add the following in your ```composer.json``:
+Add the following in your `composer.json`:
 
 ``` json
 {
