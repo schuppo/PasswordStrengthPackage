@@ -7,7 +7,7 @@ It is in a early stage of development but should fulfill its purpose.
 
 This Validations provided include:
 
-- contains alphabetic
+- contains alphabetic characters
 - contains numeric characters
 - contains mixed case characters
 
