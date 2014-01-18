@@ -48,7 +48,7 @@ return array(
 
         // ...
 
-        'Schuppo/PasswordStrength',
+        'Schuppo/PasswordStrength/PasswordStrengthServiceProvider',
     );
 
     // ...
