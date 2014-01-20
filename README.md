@@ -78,6 +78,9 @@ $v->passes();   // returns true;
 
 Notice that you can validate any value with the new rules. This only reason why this package is called "Password Strength Package" is that it describes its foremose purpose.
 
+#History
+- **[0.3.1]** Fixed: Package validator doesn't overwrite custom validation errror messages any more. Not functional tested though because I have no clue how to set up a test which controls the passing of variables from the password strength package to the native validator INSIDE the package's test folders. Any suggestions?
+
 #License
 
 This package is under the MIT license. See the complete license:

@@ -1,7 +1,7 @@
 <?php namespace Schuppo\PasswordStrength;
 
 use \Symfony\Component\Translation\Translator;
-
+use  \Illuminate\Validator;
 /**
  * PasswordStrengthTest
  *
@@ -76,5 +76,14 @@ class PasswordStrengthTest extends \PHPUnit_Framework_TestCase
         );
 
         $this->assertTrue($this->validation->passes());
+    }
+
+    public function test_custom_validation_errors_are_not_overwritten()
+    {
+        $this->validation = (new \Illuminate\Validation\Factory(new Translator('en')))->make(
+            ['password' => ''],
+            ['password' => 'required'],
+            ['required' => 'Should not be overwritten.']);
+        dd($this->validation->errors());
     }
 }

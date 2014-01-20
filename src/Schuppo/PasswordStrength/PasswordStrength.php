@@ -6,11 +6,17 @@ class PasswordStrength extends Validator {
 
     public function __construct($translator, $data, $rules, $messages = null)
     {
-        parent::__construct($translator, $data, $rules, [
-                "letters" => "The :attribute must include at least one letter.",
-                "case_diff" => "The :attribute must include both upper and lower case letters.",
-                "numbers" => "The :attribute must include at least one number."
-        ]);
+        $newMessages = [
+            "letters" => "The :attribute must include at least one letter.",
+            "case_diff" => "The :attribute must include both upper and lower case letters.",
+            "numbers" => "The :attribute must include at least one number."
+        ];
+
+        foreach($newMessages as $key => $value) {
+            $messages[$key] = $value;
+        }
+
+        parent::__construct($translator, $data, $rules, $messages);
     }
 
     public function validateLetters($attribute, $value, $parameters)
