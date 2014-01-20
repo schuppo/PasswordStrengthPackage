@@ -32,6 +32,7 @@ Notice that you have to set in ```composer.json```
 "minimum-stability": "dev"
 ```
 Because it is in such an early stage it is not a good idea to use it in production environments. Seriously. (By the way, this is my first contribution on GitHub and to Laravel so don't be too harsh.)
+If you trust me that the code is unit tested you don't have to download the package's dev dependencies. Updating the application with `composer udate --no-dev` is best choice then.
 
 ### Initialize the package
 
