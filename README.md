@@ -39,9 +39,9 @@ If you trust me that the code is unit tested you don't have to download the pack
 
 ### Initialize the package
 
-To start using the package, you have to add it to the arraykey ```providers`` in ```app/config/app.php```:
+To start using the package, you have to add it to the arraykey `providers` in `app/config/app.php`:
 
-``` php
+` php
 // app/config/app.php
 
 return array(
@@ -57,7 +57,7 @@ return array(
 
     // ...
 );
-```
+`
 
 
 ##Usage
