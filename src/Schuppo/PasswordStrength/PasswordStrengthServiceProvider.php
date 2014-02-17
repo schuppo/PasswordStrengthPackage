@@ -18,9 +18,9 @@ class PasswordStrengthServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-		$this->app->bindShared('Schuppo\PasswordStrength', function() {
-            return new PasswordStrength;
-        });
+		// $this->app->bindShared('Schuppo\PasswordStrength', function() {
+  //           return new PasswordStrength;
+  //       });
 	}
 
     public function boot()
