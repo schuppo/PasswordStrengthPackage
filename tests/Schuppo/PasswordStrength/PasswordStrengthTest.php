@@ -1,7 +1,7 @@
 <?php namespace Schuppo\PasswordStrength;
 
 use \Symfony\Component\Translation\Translator;
-use  \Illuminate\Validator;
+use  \Illuminate\Validation\Validator;
 /**
  * PasswordStrengthTest
  *
@@ -9,9 +9,15 @@ use  \Illuminate\Validator;
  */
 class PasswordStrengthTest extends \PHPUnit_Framework_TestCase
 {
+
+    public function setUp()
+    {
+        $this->pS = new PasswordStrength();
+        # code...
+    }
     public function test_case_diff_fails_just_lowercase()
     {
-        $this->validation = new PasswordStrength(new Translator('en'),
+        $this->validation = new Validator(new Translator('en'),
             ['password' => 'tt'],
             ['password' => 'case_diff']
         );
@@ -20,7 +26,7 @@ class PasswordStrengthTest extends \PHPUnit_Framework_TestCase
 
     public function test_case_diff_fails_just_uppercase()
     {
-        $this->validation = new PasswordStrength(new Translator('en'),
+        $this->validation = new Validator(new Translator('en'),
             ['password' => 'TT'],
             ['password' => 'case_diff']
         );
@@ -29,7 +35,7 @@ class PasswordStrengthTest extends \PHPUnit_Framework_TestCase
 
     public function test_case_diff_succeeds()
     {
-        $this->validation = new PasswordStrength(new Translator('en'),
+        $this->validation = new Validator(new Translator('en'),
             ['password' => 'Tt'],
             ['password' => 'case_diff']
         );
@@ -40,7 +46,7 @@ class PasswordStrengthTest extends \PHPUnit_Framework_TestCase
 
     public function test_numbers_fails()
     {
-        $this->validation = new PasswordStrength(new Translator('en'),
+        $this->validation = new Validator(new Translator('en'),
             ['password' => 'T'],
             ['password' => 'numbers']
         );
@@ -50,7 +56,7 @@ class PasswordStrengthTest extends \PHPUnit_Framework_TestCase
 
     public function test_numbers_succeeds()
     {
-        $this->validation = new PasswordStrength(new Translator('en'),
+        $this->validation = new Validator(new Translator('en'),
             ['password' => '1'],
             ['password' => 'numbers']
         );
@@ -60,7 +66,7 @@ class PasswordStrengthTest extends \PHPUnit_Framework_TestCase
 
     public function test_letters_fails()
     {
-        $this->validation = new PasswordStrength(new Translator('en'),
+        $this->validation = new Validator(new Translator('en'),
             ['password' => '1'],
             ['password' => 'letters']
         );
@@ -70,7 +76,7 @@ class PasswordStrengthTest extends \PHPUnit_Framework_TestCase
 
     public function test_letters_succeeds()
     {
-        $this->validation = new PasswordStrength(new Translator('en'),
+        $this->validation = new Validator(new Translator('en'),
             ['password' => 'T'],
             ['password' => 'letters']
         );
@@ -84,6 +90,5 @@ class PasswordStrengthTest extends \PHPUnit_Framework_TestCase
             ['password' => ''],
             ['password' => 'required'],
             ['required' => 'Should not be overwritten.']);
-        dd($this->validation->errors());
     }
 }

@@ -1,7 +1,7 @@
 PasswordStrength Package
 ================
 
-This package provides a validator for ensuring strong passwords in Laravel 4 applications. It is influenced quite a lot by [PasswordStrengthBundle for Symfony 2](https://github.com/jbafford/PasswordStrengthBundle).
+This package provides a validator that ensures strong passwords in Laravel 4 applications. It is influenced  a lot by [PasswordStrengthBundle for Symfony 2](https://github.com/jbafford/PasswordStrengthBundle).
 
 It is in a early stage of development but should fulfill its purpose.
 
@@ -11,6 +11,9 @@ This Validations provided include:
 - contains numeric characters
 - contains mixed case characters
 
+#History
+- **[0.4.1]** The package works properly now when other extensions of laravel's validator are implemented (like [unique-with](https://github.com/felixkiss/uniquewith-validator)). Unfortunately the implementation of localized response messages didn't work out, so they are english only untill now. If someone has an idea how to solve this problem, just let me know. 
+- **[0.3.1]** Fixed: Package validator doesn't overwrite custom validation errror messages any more. Not functional tested though because I have no clue how to set up a test which controls the passing of variables from the password strength package to the native validator INSIDE the package's test folders. Any suggestions?
 
 #Documentation
 
@@ -78,8 +81,7 @@ $v->passes();   // returns true;
 
 Notice that you can validate any value with the new rules. This only reason why this package is called "Password Strength Package" is that it describes its foremose purpose.
 
-#History
-- **[0.3.1]** Fixed: Package validator doesn't overwrite custom validation errror messages any more. Not functional tested though because I have no clue how to set up a test which controls the passing of variables from the password strength package to the native validator INSIDE the package's test folders. Any suggestions?
+
 
 #License
 
