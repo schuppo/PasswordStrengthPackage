@@ -1,6 +1,4 @@
-[![Build Status](https://travis-ci.org/schuppo/PasswordStrengthPackage.png?branch=master)](https://travis-ci.org/schuppo/PasswordStrengthPackage)
-
-PasswordStrength Package
+PasswordStrength Package [![Build Status](https://travis-ci.org/schuppo/PasswordStrengthPackage.png?branch=master)](https://travis-ci.org/schuppo/PasswordStrengthPackage)
 ================
 
 This package provides a validator that ensures strong passwords in Laravel 4 applications. It is influenced  a lot by [PasswordStrengthBundle for Symfony 2](https://github.com/jbafford/PasswordStrengthBundle).
