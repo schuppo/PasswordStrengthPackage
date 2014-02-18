@@ -12,8 +12,11 @@ This Validations provided include:
 - contains mixed case characters
 
 #History
-- **[0.4.1]** The package works properly now when other extensions of laravel's validator are implemented (like [unique-with](https://github.com/felixkiss/uniquewith-validator)). Unfortunately the implementation of localized response messages didn't work out, so they are english only untill now. If someone has an idea how to solve this problem, just let me know. 
-- **[0.3.1]** Fixed: Package validator doesn't overwrite custom validation errror messages any more. Not functional tested though because I have no clue how to set up a test which controls the passing of variables from the password strength package to the native validator INSIDE the package's test folders. Any suggestions?
+**[0.4.1]**
+- The package works properly now when other extensions of laravel's validator are implemented (like [unique-with](https://github.com/felixkiss/uniquewith-validator)). .
+- The package is able to take localization overwrites now as described in the [laravel docs](http://laravel.com/docs/localization#overriding-package-language-files)
+**[0.3.1]**
+- Fixed: Package validator doesn't overwrite custom validation errror messages any more. Not functional tested though because I have no clue how to set up a test which controls the passing of variables from the password strength package to the native validator INSIDE the package's test folders. Any suggestions?
 
 #Documentation
 
