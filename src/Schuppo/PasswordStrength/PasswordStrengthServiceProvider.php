@@ -25,27 +25,30 @@ class PasswordStrengthServiceProvider extends ServiceProvider {
 
     public function boot()
     {
-        $messages = [
-              "letters" => "The :attribute must include at least one letter.",
-            "case_diff" => "The :attribute must include both upper and lower case letters.",
-            "numbers" => "The :attribute must include at least one number."
-        ];
-
         $this->package('schuppo/password-strength');
 
         $pS = $this->app->make('Schuppo\PasswordStrength');
 
         $translator = $this->app['validator']->getTranslator();
 
-        $this->app['validator']->extend('letters', function ($attribute, $value, $parameters) use ($pS) {
+        $translator->addNamespace('password-strength', __DIR__ . '/../lang');
+
+        $translator->load('password-strength', 'validation', $translator->locale());
+
+        $validator = $this->app['validator'];
+
+
+        $validator->extend('letters', function ($attribute, $value, $parameters) use ($pS) {
             return $pS->validateLetters($attribute, $value, $parameters);
-        }, $messages['letters']);
-        $this->app['validator']->extend('numbers', function ($attribute, $value, $parameters) use ($pS) {
+        }, $translator->get('password-strength::validation.letters'));
+
+        $validator->extend('numbers', function ($attribute, $value, $parameters) use ($pS) {
             return $pS->validateNumbers($attribute, $value, $parameters);
-        }, $messages['numbers']);
-        $this->app['validator']->extend('caseDiff', function ($attribute, $value, $parameters) use ($pS) {
+        }, $translator->get('password-strength::validation.numbers'));
+
+        $validator->extend('caseDiff', function ($attribute, $value, $parameters) use ($pS) {
             return $pS->validateCaseDiff($attribute, $value, $parameters);
-        }, $messages['case_diff']);
+        }, $translator->get('password-strength::validation.case_diff'));
     }
 
 	/**
