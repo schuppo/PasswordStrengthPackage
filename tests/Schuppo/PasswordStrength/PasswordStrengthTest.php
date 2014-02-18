@@ -27,28 +27,19 @@ class PasswordStrengthTest extends \PHPUnit_Framework_TestCase
 
     public function test_case_diff_fails_just_lowercase()
     {
-        $this->validation = $this->factory->make(
-            ['password' => 'tt'],
-            ['password' => 'case_diff']
-        );
+        $this->validation = $this->factory->make(['password' => 'tt'], ['password' => 'case_diff'] );
         $this->assertFalse($this->validation->passes());
     }
 
     public function test_case_diff_fails_just_uppercase()
     {
-       $this->validation = $this->factory->make(
-            ['password' => 'TT'],
-            ['password' => 'case_diff']
-        );
+       $this->validation = $this->factory->make(['password' => 'TT'], ['password' => 'case_diff'] );
         $this->assertFalse($this->validation->passes());
     }
 
     public function test_case_diff_succeeds()
     {
-        $this->validation = $this->factory->make(
-            ['password' => 'Tt'],
-            ['password' => 'case_diff']
-        );
+        $this->validation = $this->factory->make(['password' => 'Tt'], ['password' => 'case_diff'] );
 
 
         $this->assertTrue($this->validation->passes());
@@ -56,50 +47,36 @@ class PasswordStrengthTest extends \PHPUnit_Framework_TestCase
 
     public function test_numbers_fails()
     {
-        $this->validation = $this->factory->make(
-            ['password' => 'T'],
-            ['password' => 'numbers']
-        );
+        $this->validation = $this->factory->make(['password' => 'T'], ['password' => 'numbers'] );
 
         $this->assertFalse($this->validation->passes());
     }
 
     public function test_numbers_succeeds()
     {
-        $this->validation = $this->factory->make(
-            ['password' => '1'],
-            ['password' => 'numbers']
-        );
+        $this->validation = $this->factory->make(['password' => '1'], ['password' => 'numbers'] );
 
         $this->assertTrue($this->validation->passes());
     }
 
     public function test_letters_fails()
     {
-        $this->validation = $this->factory->make(
-            ['password' => '1'],
-            ['password' => 'letters']
-        );
+        $this->validation = $this->factory->make(['password' => '1'], ['password' => 'letters'] );
 
         $this->assertFalse($this->validation->passes());
     }
 
     public function test_letters_succeeds()
     {
-        $this->validation = $this->factory->make(
-            ['password' => 'T'],
-            ['password' => 'letters']
-        );
+        $this->validation = $this->factory->make(['password' => 'T'], ['password' => 'letters'] );
 
         $this->assertTrue($this->validation->passes());
     }
 
     public function test_custom_validation_errors_are_not_overwritten()
     {
-        $this->validation = $this->factory->make(
-            ['password' => ''],
-            ['password' => 'required'],
-            ['required' => 'Should not be overwritten.']);
+        $this->validation = $this->factory->make(['password' => ''], ['password' => 'required'], ['required' => 'Should not be overwritten.']);
+
         $this->assertEquals('Should not be overwritten.', $this->validation->errors()->get('password')[0]);
     }
 }
