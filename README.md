@@ -12,6 +12,8 @@ This Validations provided include:
 - contains mixed case characters
 
 #History
+**[0.5.1]**
+- Minimum requirement (PHP 5.4 because of array chains) is now recognized by composer.json
 **[0.4.1]**
 - The package works properly now when other extensions of laravel's validator are implemented (like [unique-with](https://github.com/felixkiss/uniquewith-validator)).
 - The package is able to take localization overwrites now as described in the [laravel docs](http://laravel.com/docs/localization#overriding-package-language-files)
