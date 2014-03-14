@@ -12,13 +12,21 @@ This Validations provided include:
 - contains mixed case characters
 
 #History
+**[0.5.2]**
+
+- Small changes in README.md
+
 **[0.5.1]**
+
 - Minimum requirement (PHP 5.4 because of array chains) is now recognized by composer.json
+
 **[0.4.1]**
+
 - The package works properly now when other extensions of laravel's validator are implemented (like [unique-with](https://github.com/felixkiss/uniquewith-validator)).
 - The package is able to take localization overwrites now as described in the [laravel docs](http://laravel.com/docs/localization#overriding-package-language-files)
 
 **[0.3.1]**
+
 - Fixed: Package validator doesn't overwrite custom validation errror messages any more. Not functional tested though because I have no clue how to set up a test which controls the passing of variables from the password strength package to the native validator INSIDE the package's test folders. Any suggestions?
 
 #Documentation
@@ -29,17 +37,22 @@ This Validations provided include:
 
 Add the following in your `composer.json`:
 
-``` json
+```json
 {
     "require": {
         "schuppo/password-strength": "dev-master"
     }
 }
 ```
-Notice that you have to set in ```composer.json```
-``` json
+
+You have to set in ```composer.json```
+
+```json
 "minimum-stability": "dev"
 ```
+
+to make it work.
+
 Because it is in such an early stage it is not a good idea to use it in production environments. Seriously. (By the way, this is my first contribution on GitHub and to Laravel so don't be too harsh.)
 If you trust me that the code is unit tested you don't have to download the package's dev dependencies. Updating the application with `composer udate --no-dev` is best choice then.
 
@@ -47,27 +60,20 @@ If you trust me that the code is unit tested you don't have to download the pack
 
 To start using the package, you have to add it to the arraykey `providers` in `app/config/app.php`:
 
-` php
+```php
 // app/config/app.php
-
 return array(
-
-    // ...
-
+    // ...    
     'providers' => array(
-
         // ...
-
         'Schuppo/PasswordStrength/PasswordStrengthServiceProvider',
     );
-
     // ...
 );
-`
-
+```
 
 ##Usage
-Now Laravel's native ```Validator``` class is extended by three rules:
+Now Laravel's native `Validator` class is extended by three rules:
 
 - case_diff
 - numbers
@@ -75,13 +81,12 @@ Now Laravel's native ```Validator``` class is extended by three rules:
 
 ### Example
 You can apply these rules as described in the [validation section on Laravel's website](http://laravel.com/docs/validation)
-``` php
 
+```php
 $v = Validator::make(
     'password' => '12345QWERTqwert',
     'password' => 'case_diff|numbers|letters')
 );
-
 $v->passes();   // returns true;
 ```
 
