@@ -12,6 +12,10 @@ This Validations provided include:
 - contains mixed case characters
 
 #History
+**[0.5.3]
+
+- Added new version to composer.json
+
 **[0.5.2]**
 
 - Small changes in README.md
