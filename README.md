@@ -12,7 +12,7 @@ This Validations provided include:
 - contains mixed case characters
 
 #History
-**[0.5.3]
+**[0.5.3]**
 
 - Added new version to composer.json
 
