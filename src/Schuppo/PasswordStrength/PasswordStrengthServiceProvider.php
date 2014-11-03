@@ -49,6 +49,11 @@ class PasswordStrengthServiceProvider extends ServiceProvider {
         $validator->extend('caseDiff', function ($attribute, $value, $parameters) use ($pS) {
             return $pS->validateCaseDiff($attribute, $value, $parameters);
         }, $translator->get('password-strength::validation.case_diff'));
+		
+		$validator->extend('symbols', function ($attribute, $value, $parameters) use ($pS) {
+            return $pS->validateSymbols($attribute, $value, $parameters);
+        }, $translator->get('password-strength::validation.symbols'));
+		
     }
 
 	/**
