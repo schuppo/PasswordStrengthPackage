@@ -16,7 +16,7 @@ class PasswordStrength {
     {
         return preg_match('/(\p{Ll}+.*\p{Lu})|(\p{Lu}+.*\p{Ll})/', $value);
     }
-	
+
 	public function validateSymbols($attribute, $value, $parameters)
     {
         return preg_match('/[!@#$%^&*?()\-_=+{};:,<.>]/', $value);

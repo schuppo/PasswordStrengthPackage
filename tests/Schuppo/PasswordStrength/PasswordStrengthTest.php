@@ -14,6 +14,9 @@ class PasswordStrengthTest extends \PHPUnit_Framework_TestCase
     {
         $this->factory = new Factory(new Translator('en'));
         $pS = new PasswordStrength();
+        $this->factory->extend('symbols', function($attribute, $value, $parameters) use ($pS){
+            return $pS->validateSymbols($attribute, $value, $parameters);
+        });
         $this->factory->extend('case_diff', function($attribute, $value, $parameters) use ($pS){
             return $pS->validateCaseDiff($attribute, $value, $parameters);
         });
@@ -24,6 +27,25 @@ class PasswordStrengthTest extends \PHPUnit_Framework_TestCase
             return $pS->validateLetters($attribute, $value, $parameters);
         });
     }
+
+    public function test_symbols_fails_no_symbol()
+    {
+        $this->validation = $this->factory->make(
+            array( 'password' => 'tt' ),
+            array( 'password' => 'symbols' )
+        );
+        $this->assertFalse($this->validation->passes());
+    }
+
+    public function test_symbols_succeeds_with_symbol()
+    {
+        $this->validation = $this->factory->make(
+            array( 'password' => '@' ),
+            array( 'password' => 'symbols' )
+        );
+        $this->assertTrue($this->validation->passes());
+    }
+
 
     public function test_case_diff_fails_just_lowercase()
     {

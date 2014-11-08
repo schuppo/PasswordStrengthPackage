@@ -5,13 +5,18 @@ This package provides a validator that ensures strong passwords in Laravel 4 app
 
 It is in a early stage of development but should fulfill its purpose.
 
-This Validations provided include:
+The provided validations include:
 
-- contains alphabetic characters
-- contains numeric characters
-- contains mixed case characters
+- check if input contains alphabetic characters
+- check if input contains numeric characters
+- check if input contains mixed case characters
+- check if input contains symbols
 
 #History
+**[0.6]**
+
+- New validation rule to check if input contains symbols. Thanks to [closca](https://github.com/closca) for providing this new feature.
+
 **[0.5.3]**
 
 - Added new version to composer.json
@@ -67,7 +72,7 @@ To start using the package, you have to add it to the arraykey `providers` in `a
 ```php
 // app/config/app.php
 return array(
-    // ...    
+    // ...
     'providers' => array(
         // ...
         'Schuppo/PasswordStrength/PasswordStrengthServiceProvider',
@@ -77,24 +82,25 @@ return array(
 ```
 
 ##Usage
-Now Laravel's native `Validator` class is extended by three rules:
+Now Laravel's native `Validator` class is extended with four rules:
 
 - case_diff
 - numbers
 - letters
+- symbols
 
 ### Example
 You can apply these rules as described in the [validation section on Laravel's website](http://laravel.com/docs/validation)
 
 ```php
 $v = Validator::make(
-    'password' => '12345QWERTqwert',
-    'password' => 'case_diff|numbers|letters')
+    'password' => '12345QWERTqwert@',
+    'password' => 'case_diff|numbers|letters|symbols')
 );
 $v->passes();   // returns true;
 ```
 
-Notice that you can validate any value with the new rules. This only reason why this package is called "Password Strength Package" is that it describes its foremose purpose.
+Notice that you can validate any value with the new rules. The only reason why this package is called "Password Strength Package" is that it describes its foremost purpose.
 
 
 
