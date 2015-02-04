@@ -31,7 +31,7 @@ The provided validations include:
 
 **[0.4.1]**
 
-- The package works properly now when other extensions of laravel's validator are implemented (like [unique-with](https://github.com/felixkiss/uniquewith-validator)).
+- The package works properly now when other extensions of laravel's validator are used as well (like [unique-with](https://github.com/felixkiss/uniquewith-validator)).
 - The package is able to take localization overwrites now as described in the [laravel docs](http://laravel.com/docs/localization#overriding-package-language-files)
 
 **[0.3.1]**
