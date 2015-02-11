@@ -13,6 +13,12 @@ The provided validations include:
 - check if input contains symbols
 
 #History
+**[1.0.1]
+Starts to make package laravel 5 ready
+
+**[0.7]**
+Fixes typo in readme
+
 **[0.6]**
 
 - New validation rule to check if input contains symbols. Thanks to [closca](https://github.com/closca) for providing this new feature.
@@ -49,7 +55,7 @@ Add the following in your `composer.json`:
 ```json
 {
     "require": {
-        "schuppo/password-strength": "dev-master"
+        "schuppo/password-strength": "~0.*"
     }
 }
 ```
