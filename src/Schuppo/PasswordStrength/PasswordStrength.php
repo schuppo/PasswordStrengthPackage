@@ -2,22 +2,22 @@
 
 class PasswordStrength {
 
-    public function validateLetters($attribute, $value, $parameters)
+    public function validateLetters($value)
     {
         return preg_match('/\pL/', $value);
     }
 
-    public function validateNumbers($attribute, $value, $parameters)
+    public function validateNumbers($value)
     {
         return preg_match('/\pN/', $value);
     }
 
-    public function validateCaseDiff($attribute, $value, $parameters)
+    public function validateCaseDiff($value)
     {
         return preg_match('/(\p{Ll}+.*\p{Lu})|(\p{Lu}+.*\p{Ll})/', $value);
     }
 
-	public function validateSymbols($attribute, $value, $parameters)
+	public function validateSymbols($value)
     {
         return preg_match('/[!@#$%^&*?()\-_=+{};:,<.>]/', $value);
     }

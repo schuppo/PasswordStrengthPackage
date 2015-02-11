@@ -3,8 +3,8 @@
     "description": "This package provides a validator for ensuring strong passwords in Laravel 4 applications.",
     "keywords": [
         "laravel",
-        "laravel4",
-        "laravel 4",
+        "laravel5",
+        "laravel 5",
         "validation",
         "password",
         "password strength"
@@ -17,10 +17,10 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "illuminate/support": "~4.1"
+        "illuminate/support": "~5.*"
     },
     "require-dev": {
-        "illuminate/validation": "~4.1"
+        "illuminate/validation": "~5.*"
     },
     "autoload": {
         "psr-0": {
