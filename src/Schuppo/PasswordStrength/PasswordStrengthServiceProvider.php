@@ -4,7 +4,7 @@ use Illuminate\Contracts\Validation\Factory;
 use Illuminate\Support\ServiceProvider as IlluminateServiceProvider;
 use Illuminate\Translation\Translator;
 
-class ServiceProvider extends IlluminateServiceProvider {
+class PasswordStrengthServiceProvider extends IlluminateServiceProvider {
 
 	/**
 	 * Indicates if loading of the provider is deferred.
