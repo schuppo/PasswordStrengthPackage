@@ -17,7 +17,8 @@ The provided validations include:
 ##Installation
 
 ### Get the package
-** For Laravel 4 users **
+
+**For Laravel 4 users**
 
 Add the following to your `composer.json`:
 
@@ -32,7 +33,7 @@ and afterwards ```composer update```.
 
 Or just ```composer require schuppo/password-strength:"~0.7@dev"```.
 
-** For Laravel 5 users **
+**For Laravel 5 users**
 
 ```json
 {
@@ -60,6 +61,11 @@ return array(
     // ...
 );
 ```
+**Caution**
+
+I recently recognized a small conflict in the usage of this package in combination with [unique-with](https://github.com/felixkiss/uniquewith-validator): One runs into problems when adding the ```PasswordStrengthServiceProvider``` **after** ```UniqueWithValidatorServiceProvider``` to the providers array, the  rules of this package stay unknown to the Laravel ```Validator```. 
+
+The problem is easy to fix though: Just add the service provider of this package in front of the service provider of *unique-with*. In that order both packages work fine.
 
 ##Usage
 Now Laravel's native `Validator` is extended by four rules:
