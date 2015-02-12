@@ -15,16 +15,16 @@ class PasswordStrengthTest extends \PHPUnit_Framework_TestCase
         $this->factory = new Factory(new Translator('en'));
         $pS = new PasswordStrength();
         $this->factory->extend('symbols', function($attribute, $value, $parameters) use ($pS){
-            return $pS->validateSymbols($attribute, $value, $parameters);
+            return $pS->validateSymbols($value);
         });
         $this->factory->extend('case_diff', function($attribute, $value, $parameters) use ($pS){
-            return $pS->validateCaseDiff($attribute, $value, $parameters);
+            return $pS->validateCaseDiff($value);
         });
         $this->factory->extend('numbers', function($attribute, $value, $parameters) use ($pS){
-            return $pS->validateNumbers($attribute, $value, $parameters);
+            return $pS->validateNumbers($value);
         });
         $this->factory->extend('letters', function($attribute, $value, $parameters) use ($pS){
-            return $pS->validateLetters($attribute, $value, $parameters);
+            return $pS->validateLetters($value);
         });
     }
 
