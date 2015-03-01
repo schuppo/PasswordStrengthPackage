@@ -5,29 +5,20 @@ use Illuminate\Support\ServiceProvider;
 class PasswordStrengthServiceProvider extends ServiceProvider {
 
 	/**
-	 * Indicates if loading of the provider is deferred.
-	 *
-	 * @var bool
-	 */
-	protected $defer = false;
-
-	/**
 	 * Register the service provider.
 	 *
 	 * @return void
 	 */
 	public function register()
 	{
-		$this->app->bindShared('Schuppo\PasswordStrength', function() {
+		$this->app->singleton('passwordStrength', function() {
             return new PasswordStrength;
         });
 	}
 
     public function boot()
     {
-        $this->package('schuppo/password-strength');
-
-        $pS = $this->app->make('Schuppo\PasswordStrength');
+        $pS = $this->app->make('passwordStrength');
 
         $translator = $this->app['validator']->getTranslator();
 
@@ -55,15 +46,5 @@ class PasswordStrengthServiceProvider extends ServiceProvider {
         }, $translator->get('password-strength::validation.symbols'));
 		
     }
-
-	/**
-	 * Get the services provided by the provider.
-	 *
-	 * @return array
-	 */
-	public function provides()
-	{
-		return array();
-	}
 
 }
