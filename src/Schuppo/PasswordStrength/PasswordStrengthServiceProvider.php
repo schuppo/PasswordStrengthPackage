@@ -1,17 +1,10 @@
 <?php namespace Schuppo\PasswordStrength;
 
 use Illuminate\Contracts\Validation\Factory;
-use Illuminate\Support\ServiceProvider as IlluminateServiceProvider;
+use Illuminate\Support\ServiceProvider;
 use Illuminate\Translation\Translator;
 
-class PasswordStrengthServiceProvider extends IlluminateServiceProvider {
-
-	/**
-	 * Indicates if loading of the provider is deferred.
-	 *
-	 * @var bool
-	 */
-	protected $defer = true;
+class PasswordStrengthServiceProvider extends ServiceProvider {
 
 	/**
 	 * Register the service provider.
@@ -20,15 +13,14 @@ class PasswordStrengthServiceProvider extends IlluminateServiceProvider {
 	 */
 	public function register()
 	{
-		$this->app->singleton('Schuppo\PasswordStrength', function() {
+		$this->app->singleton('passwordStrength', function() {
             return new PasswordStrength();
         });
 	}
 
-    public function boot()
+    public function boot(Factory $validator)
     {
 
-        $validator = $this->app['validator'];
         $passwordStrength = new PasswordStrength();
 
         /** @var Translator $translator */
@@ -44,15 +36,4 @@ class PasswordStrengthServiceProvider extends IlluminateServiceProvider {
             }, $translator->get("password-strength::validation.$rule"));
         }
     }
-
-	/**
-	 * Get the services provided by the provider.
-	 *
-	 * @return array
-	 */
-	public function provides()
-	{
-		return ['Schuppo\PasswordStrength'];
-	}
-
 }
