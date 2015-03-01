@@ -63,7 +63,7 @@ return array(
 ```
 **Caution**
 
-I recently recognized a small conflict in the usage of this package in combination with [unique-with](https://github.com/felixkiss/uniquewith-validator): One runs into problems when adding the ```PasswordStrengthServiceProvider``` **after** ```UniqueWithValidatorServiceProvider``` to the providers array, the  rules of this package stay unknown to the Laravel ```Validator```. 
+I recently recognized a small conflict in the usage of this package in combination with [unique-with](https://github.com/felixkiss/uniquewith-validator): One runs into problems when adding the ```PasswordStrengthServiceProvider``` **after** ```UniqueWithValidatorServiceProvider``` to the providers array, the  rules of this package stay unknown to the Laravel ```Validator```.
 
 The problem is easy to fix though: Just add the service provider of this package in front of the service provider of *unique-with*. In that order both packages work fine.
 
@@ -89,11 +89,22 @@ $v->passes();   // returns true;
 Notice that you can validate any value with the new rules. The only reason why this package is called "Password Strength Package" is that it describes its foremost purpose.
 
 #History
+
+*Laravel 5 related*
+
+**[1.1]**
+Adds french translations
+
 **[1.0.2]**
 Updates README.md
 
 **[1.0.1]**
 Starts to make package laravel 5 ready
+
+*Laravel 4 related *
+
+**[0.8]**
+Adds french translations
 
 **[0.7]**
 Fixes typo in readme
