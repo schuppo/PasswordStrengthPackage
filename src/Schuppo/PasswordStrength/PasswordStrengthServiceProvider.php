@@ -13,27 +13,28 @@ class PasswordStrengthServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-		$this->app->singleton('passwordStrength', function() {
+		app()->singleton('passwordStrength', function() {
             return new PasswordStrength();
+        });
+
+        app()->singleton('passwordStrength.translationProvider', function () {
+            return new PasswordStrengthTranslationProvider();
         });
 	}
 
     public function boot(Factory $validator)
     {
 
-        $passwordStrength = new PasswordStrength();
-
-        /** @var Translator $translator */
-        $translator = $validator->getTranslator();
-        $translator->addNamespace('password-strength', __DIR__ . '/../lang');
-        $translator->load('password-strength', 'validation', $translator->locale());
+        $passwordStrength = app('passwordStrength');
+        $translator = app('passwordStrength.translationProvider')->get($validator);
 
         foreach(['letters', 'numbers', 'caseDiff', 'symbols'] as $rule)
         {
+            $camelCasedRule = snake_case($rule);
             $validator->extend($rule, function ($_, $value, $_) use ($passwordStrength, $rule) {
-                $capitalizedType = ucfirst($rule);
-                return call_user_func([$passwordStrength, "validate$capitalizedType"], $value);
-            }, $translator->get("password-strength::validation.$rule"));
+                $capitalizedRule = ucfirst($rule);
+                return call_user_func([$passwordStrength, "validate$capitalizedRule"], $value);
+            }, $translator->get("password-strength::validation.$camelCasedRule"));
         }
     }
 }
