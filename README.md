@@ -108,7 +108,7 @@ Starts to make package laravel 5 ready
 
 *Laravel 4 related*
 
-**[0.8.1]
+**[0.8.1]**
 Adds polish translation
 
 **[0.8]**
