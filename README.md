@@ -1,5 +1,8 @@
-PasswordStrength Package [![Build Status](https://travis-ci.org/schuppo/PasswordStrengthPackage.png?branch=master)](https://travis-ci.org/schuppo/PasswordStrengthPackage)
+PasswordStrength Package
 ================
+[![Build Status](https://travis-ci.org/schuppo/PasswordStrengthPackage.png?branch=master)](https://travis-ci.org/schuppo/PasswordStrengthPackage)
+[![Total Downloads](https://poser.pugx.org/schuppo/password-strength/downloads)](https://packagist.org/packages/schuppo/password-strength)
+[![License](https://poser.pugx.org/schuppo/password-strength/license)](https://packagist.org/packages/schuppo/password-strength)
 
 This package provides a validator that ensures strong passwords in Laravel 4 applications. It is influenced  a lot by [PasswordStrengthBundle for Symfony 2](https://github.com/jbafford/PasswordStrengthBundle).
 
@@ -92,6 +95,12 @@ Notice that you can validate any value with the new rules. The only reason why t
 
 *Laravel 5 related*
 
+**[1.3]**
+Adds romanian translation
+
+**[1.2]**
+Adds polish translation
+
 **[1.1]**
 Adds french translations
 
@@ -101,7 +110,13 @@ Updates README.md
 **[1.0.1]**
 Starts to make package laravel 5 ready
 
-*Laravel 4 related *
+*Laravel 4 related*
+
+**[0.8.2]**
+Adds romanian translation
+
+**[0.8.1]**
+Adds polish translation
 
 **[0.8]**
 Adds french translations
