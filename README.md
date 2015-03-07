@@ -61,11 +61,6 @@ return array(
     // ...
 );
 ```
-**Caution**
-
-I recently recognized a small conflict in the usage of this package in combination with [unique-with](https://github.com/felixkiss/uniquewith-validator): One runs into problems when adding the ```PasswordStrengthServiceProvider``` **after** ```UniqueWithValidatorServiceProvider``` to the providers array, the  rules of this package stay unknown to the Laravel ```Validator```.
-
-The problem is easy to fix though: Just add the service provider of this package in front of the service provider of *unique-with*. In that order both packages work fine.
 
 **Caution**
 
@@ -98,6 +93,9 @@ Notice that you can validate any value with the new rules. The only reason why t
 
 *Laravel 5 related*
 
+**[1.2]**
+Fixes bug and adds polish translation
+
 **[1.1]**
 Adds french translations
 
@@ -107,7 +105,11 @@ Updates README.md
 **[1.0.1]**
 Starts to make package laravel 5 ready
 
-*Laravel 4 related *
+
+*Laravel 4 related*
+
+**[0.8.1]
+Adds polish translation
 
 **[0.8]**
 Adds french translations
