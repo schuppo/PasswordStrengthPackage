@@ -31,7 +31,7 @@ class PasswordStrengthServiceProvider extends ServiceProvider {
         foreach(['letters', 'numbers', 'caseDiff', 'symbols'] as $rule)
         {
             $camelCasedRule = snake_case($rule);
-            $validator->extend($rule, function ($_, $value, $_) use ($passwordStrength, $rule) {
+            $validator->extend($rule, function ($_, $value, $__) use ($passwordStrength, $rule) {
                 $capitalizedRule = ucfirst($rule);
                 return call_user_func([$passwordStrength, "validate$capitalizedRule"], $value);
             }, $translator->get("password-strength::validation.$camelCasedRule"));
