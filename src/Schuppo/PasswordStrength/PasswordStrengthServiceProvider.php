@@ -1,6 +1,8 @@
 <?php namespace Schuppo\PasswordStrength;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Translation\Translator;
+use Illuminate\Validation\Factory;
 
 class PasswordStrengthServiceProvider extends ServiceProvider {
 
@@ -18,14 +20,17 @@ class PasswordStrengthServiceProvider extends ServiceProvider {
 
     public function boot()
     {
+        /** @var PasswordStrength $pS */
         $pS = $this->app->make('passwordStrength');
 
+        /** @var Translator $translator */
         $translator = $this->app['validator']->getTranslator();
 
         $translator->addNamespace('password-strength', __DIR__ . '/../lang');
 
         $translator->load('password-strength', 'validation', $translator->locale());
 
+        /** @var Factory $validator */
         $validator = $this->app['validator'];
 
 
