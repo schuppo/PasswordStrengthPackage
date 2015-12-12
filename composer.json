@@ -17,7 +17,8 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "illuminate/support": "~4.1"
+        "illuminate/support": "~4.1",
+        "illuminate/translation": "~4.2"
     },
     "require-dev": {
         "illuminate/validation": "~4.1"
