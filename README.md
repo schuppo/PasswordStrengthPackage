@@ -59,7 +59,7 @@ return array(
     // ...
     'providers' => array(
         // ...
-        'Schuppo\PasswordStrength\PasswordStrengthServiceProvider',
+        \Schuppo\PasswordStrength\PasswordStrengthServiceProvider::class,
     );
     // ...
 );
@@ -96,33 +96,54 @@ Notice that you can validate any value with the new rules. The only reason why t
 
 *Laravel 5 related*
 
+**[1.4]**
+
+- Adds dutch translation
+- Updates french translation
+- Makes packages php7 ready
+
 **[1.3]**
+
 Adds romanian translation
 
 **[1.2]**
+
 Adds polish translation
 
 **[1.1]**
-Adds french translations
+
+Adds french translation
 
 **[1.0.2]**
+
 Updates README.md
 
 **[1.0.1]**
+
 Starts to make package laravel 5 ready
 
 *Laravel 4 related*
 
+**[0.9]**
+
+- Adds dutch translation
+- Updates french translation
+- Makes packages php7 ready
+
 **[0.8.2]**
+
 Adds romanian translation
 
 **[0.8.1]**
+
 Adds polish translation
 
 **[0.8]**
+
 Adds french translations
 
 **[0.7]**
+
 Fixes typo in readme
 
 **[0.6]**
@@ -149,10 +170,6 @@ Fixes typo in readme
 **[0.3.1]**
 
 - Fixed: Package validator doesn't overwrite custom validation errror messages any more. Not functional tested though because I have no clue how to set up a test which controls the passing of variables from the password strength package to the native validator INSIDE the package's test folders. Any suggestions?
-
-
-
-
 
 #License
 
