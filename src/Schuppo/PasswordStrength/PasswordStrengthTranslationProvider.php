@@ -6,6 +6,10 @@ use Illuminate\Validation\Factory;
 
 class PasswordStrengthTranslationProvider {
 
+    /**
+     * @param Factory $validator
+     * @return Translator
+     */
     public function get(Factory $validator){
         /** @var Translator $translator */
         $translator = $validator->getTranslator();
