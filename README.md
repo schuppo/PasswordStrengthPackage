@@ -28,26 +28,26 @@ Add the following to your `composer.json`:
 ```json
 {
     "require": {
-        "schuppo/password-strength": "~0.7"
+        "schuppo/password-strength": "~0.10"
     }
 }
 ```
 and afterwards ```composer update```.
 
-Or just ```composer require schuppo/password-strength:"~0.7@dev"```.
+Or just ```composer require schuppo/password-strength:"~0.10"```.
 
 **For Laravel 5 users**
 
 ```json
 {
     "require": {
-        "schuppo/password-strength": "~1.0"
+        "schuppo/password-strength": "~1.5"
     }
 }
 ```
 and afterwards ```composer update```.
 
-Or just ```composer require schuppo/password-strength:"~1.0@dev"```.
+Or just ```composer require schuppo/password-strength:"~1.5"```.
 
 ### Initialize the package
 
