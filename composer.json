@@ -21,7 +21,8 @@
         "illuminate/translation": "~4.2"
     },
     "require-dev": {
-        "illuminate/validation": "~4.1"
+        "illuminate/validation": "~4.1",
+        "phpunit/phpunit": "^5.1"
     },
     "autoload": {
         "psr-0": {
