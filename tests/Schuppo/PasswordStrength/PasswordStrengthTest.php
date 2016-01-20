@@ -65,6 +65,16 @@ class PasswordStrengthTest extends \PHPUnit_Framework_TestCase
         $this->assertFalse($this->validation->passes());
     }
 
+    /** @test */
+    public function it_handles_cyrillic_letters()
+    {
+        $validation = $this->validation->make(
+            array( 'password' => 'Ѐѐ' ),
+            array( 'password' => 'case_diff')
+        );
+        $this->assertTrue($validation->passes());
+    }
+
     public function test_case_diff_succeeds()
     {
         $this->validation = $this->factory->make(
