@@ -96,6 +96,10 @@ Notice that you can validate any value with the new rules. The only reason why t
 
 *Laravel 5 related*
 
+**[1.5]**
+
+- Adds unicode flag to case difference validation rule  
+
 **[1.4]**
 
 - Adds dutch translation
@@ -123,6 +127,11 @@ Updates README.md
 Starts to make package laravel 5 ready
 
 *Laravel 4 related*
+
+**[0.10]**
+
+- Adds unicode flag to case difference validation rule  
+
 
 **[0.9]**
 
