@@ -14,7 +14,7 @@ class PasswordStrength {
 
     public function validateCaseDiff($value)
     {
-        return preg_match('/(\p{Ll}+.*\p{Lu})|(\p{Lu}+.*\p{Ll})/', $value);
+        return preg_match('/(\p{Ll}+.*\p{Lu})|(\p{Lu}+.*\p{Ll})/u', $value);
     }
 
 	public function validateSymbols($value)
