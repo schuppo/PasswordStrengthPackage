@@ -94,66 +94,41 @@ Notice that you can validate any value with the new rules. The only reason why t
 
 #History
 
-*Laravel 5 related*
+* [Laravel 5 / Laravel 4]*
 
-**[1.5]**
+**[1.6/0.11]**
+
+- Adds russian translation
+
+**[1.5/0.10]**
 
 - Adds unicode flag to case difference validation rule  
 
-**[1.4]**
+**[1.4/0.9]**
 
 - Adds dutch translation
 - Updates french translation
 - Makes packages php7 ready
 
-**[1.3]**
+**[1.3/0.8.2]**
 
 Adds romanian translation
 
-**[1.2]**
+**[1.2/0.8.1]**
 
 Adds polish translation
 
-**[1.1]**
+**[1.1/0.8]**
 
 Adds french translation
 
-**[1.0.2]**
+**[1.0.2/0.7]**
 
 Updates README.md
 
 **[1.0.1]**
 
-Starts to make package laravel 5 ready
-
-*Laravel 4 related*
-
-**[0.10]**
-
-- Adds unicode flag to case difference validation rule  
-
-
-**[0.9]**
-
-- Adds dutch translation
-- Updates french translation
-- Makes packages php7 ready
-
-**[0.8.2]**
-
-Adds romanian translation
-
-**[0.8.1]**
-
-Adds polish translation
-
-**[0.8]**
-
-Adds french translations
-
-**[0.7]**
-
-Fixes typo in readme
+Make package laravel 5 ready
 
 **[0.6]**
 
