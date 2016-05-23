@@ -27,7 +27,6 @@ Just ```composer require schuppo/password-strength:"~0.10"```.
 
 **For Laravel 5 users**
 
-```
 Just ```composer require schuppo/password-strength:"~1.5"```.
 
 ### Initialize the package
