@@ -23,18 +23,7 @@ The provided validations include:
 
 **For Laravel 4 users**
 
-Add the following to your `composer.json`:
-
-```json
-{
-    "require": {
-        "schuppo/password-strength": "~0.10"
-    }
-}
-```
-and afterwards ```composer update```.
-
-Or just ```composer require schuppo/password-strength:"~0.10"```.
+Just ```composer require schuppo/password-strength:"~0.10"```.
 
 **For Laravel 5 users**
 
@@ -45,9 +34,7 @@ Or just ```composer require schuppo/password-strength:"~0.10"```.
     }
 }
 ```
-and afterwards ```composer update```.
-
-Or just ```composer require schuppo/password-strength:"~1.5"```.
+Just ```composer require schuppo/password-strength:"~1.5"```.
 
 ### Initialize the package
 
