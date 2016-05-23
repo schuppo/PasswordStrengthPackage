@@ -27,12 +27,6 @@ Just ```composer require schuppo/password-strength:"~0.10"```.
 
 **For Laravel 5 users**
 
-```json
-{
-    "require": {
-        "schuppo/password-strength": "~1.5"
-    }
-}
 ```
 Just ```composer require schuppo/password-strength:"~1.5"```.
 
