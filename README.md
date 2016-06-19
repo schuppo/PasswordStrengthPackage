@@ -74,11 +74,15 @@ Notice that you can validate any value with the new rules. The only reason why t
 
 #History
 
-* [Laravel 5 / Laravel 4]*
+**[Laravel 5 / Laravel 4]**
+
+**[1.7/0.12]**
+
+Adds Czech translation
 
 **[1.6/0.11]**
 
-- Adds russian translation
+- Adds Russian translation
 
 **[1.5/0.10]**
 
@@ -86,21 +90,21 @@ Notice that you can validate any value with the new rules. The only reason why t
 
 **[1.4/0.9]**
 
-- Adds dutch translation
-- Updates french translation
+- Adds Dutch translation
+- Updates French translation
 - Makes packages php7 ready
 
 **[1.3/0.8.2]**
 
-Adds romanian translation
+Adds Romanian translation
 
 **[1.2/0.8.1]**
 
-Adds polish translation
+Adds Polish translation
 
 **[1.1/0.8]**
 
-Adds french translation
+Adds French translation
 
 **[1.0.2/0.7]**
 
