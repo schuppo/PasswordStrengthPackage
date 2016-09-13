@@ -4,7 +4,7 @@ PasswordStrength Package
 [![Total Downloads](https://poser.pugx.org/schuppo/password-strength/downloads)](https://packagist.org/packages/schuppo/password-strength)
 [![License](https://poser.pugx.org/schuppo/password-strength/license)](https://packagist.org/packages/schuppo/password-strength)
 
-This package provides a validator that ensures strong passwords in Laravel 4 applications. It is influenced  a lot by [PasswordStrengthBundle for Symfony 2](https://github.com/jbafford/PasswordStrengthBundle).
+This package provides a validator that ensures strong passwords in Laravel 4 & 5 applications. It is influenced  a lot by [PasswordStrengthBundle for Symfony 2](https://github.com/jbafford/PasswordStrengthBundle).
 
 It is out now for a while and since there were no complaints it very likely fulfills its purpose.
 
