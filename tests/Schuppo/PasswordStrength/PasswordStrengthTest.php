@@ -1,6 +1,7 @@
 <?php namespace Schuppo\PasswordStrength;
 
-use \Symfony\Component\Translation\Translator;
+use Illuminate\Translation\ArrayLoader;
+use Illuminate\Translation\Translator;
 use  \Illuminate\Validation\Factory;
 /**
  * PasswordStrengthTest
@@ -16,7 +17,7 @@ class PasswordStrengthTest extends \PHPUnit_Framework_TestCase
     function __construct()
     {
         parent::__construct();
-        $this->validation = new Factory(new Translator('en'));
+        $this->validation = new Factory(new Translator(new ArrayLoader(), 'en'));
     }
 
     public function setUp()
