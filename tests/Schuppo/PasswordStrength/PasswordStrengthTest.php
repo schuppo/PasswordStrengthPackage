@@ -1,8 +1,11 @@
-<?php namespace Schuppo\PasswordStrength;
+<?php
+
+namespace Schuppo\PasswordStrength;
 
 use Illuminate\Translation\ArrayLoader;
 use Illuminate\Translation\Translator;
 use  \Illuminate\Validation\Factory;
+
 /**
  * PasswordStrengthTest
  *
@@ -10,13 +13,12 @@ use  \Illuminate\Validation\Factory;
  */
 class PasswordStrengthTest extends \PHPUnit_Framework_TestCase
 {
-
-
     private $validation;
 
-    function __construct()
+    public function __construct()
     {
         parent::__construct();
+
         $this->validation = new Factory(new Translator(new ArrayLoader(), 'en'));
     }
 
@@ -66,7 +68,7 @@ class PasswordStrengthTest extends \PHPUnit_Framework_TestCase
 
     public function test_case_diff_fails_just_uppercase()
     {
-       $validation = $this->validation->make(
+        $validation = $this->validation->make(
             array( 'password' => 'TT' ),
             array( 'password' => 'case_diff')
         );
@@ -89,8 +91,6 @@ class PasswordStrengthTest extends \PHPUnit_Framework_TestCase
             array( 'password' => 'Tt' ),
             array( 'password' => 'case_diff')
         );
-
-
         $this->assertTrue($validation->passes());
     }
 
@@ -100,7 +100,6 @@ class PasswordStrengthTest extends \PHPUnit_Framework_TestCase
             array( 'password' => 'T' ),
             array( 'password' => 'numbers' )
         );
-
         $this->assertFalse($validation->passes());
     }
 
@@ -110,7 +109,6 @@ class PasswordStrengthTest extends \PHPUnit_Framework_TestCase
             array( 'password' => '1' ),
             array( 'password' => 'numbers' )
         );
-
         $this->assertTrue($validation->passes());
     }
 
@@ -120,7 +118,6 @@ class PasswordStrengthTest extends \PHPUnit_Framework_TestCase
             array( 'password' => '1' ),
             array( 'password' => 'letters' )
         );
-
         $this->assertFalse($validation->passes());
     }
 
@@ -130,7 +127,6 @@ class PasswordStrengthTest extends \PHPUnit_Framework_TestCase
             array( 'password' => 'T' ),
             array( 'password' => 'letters')
         );
-
         $this->assertTrue($validation->passes());
     }
 
