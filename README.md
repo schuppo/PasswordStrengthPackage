@@ -76,6 +76,10 @@ Notice that you can validate any value with the new rules. The only reason why t
 
 **[Laravel 5 / Laravel 4]**
 
+**[1.9/0.14]**
+
+Improves Polish translation
+
 **[1.8/0.13]**
 
 Adds Arabic translation
