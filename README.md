@@ -63,10 +63,10 @@ Now Laravel's native `Validator` is extended by four rules:
 You can apply these rules as described in the [validation section on Laravel's website](http://laravel.com/docs/validation)
 
 ```php
-$v = Validator::make(
+$v = Validator::make(array(
     'password' => '12345QWERTqwert@',
-    'password' => 'case_diff|numbers|letters|symbols')
-);
+    'password' => 'case_diff|numbers|letters|symbols'
+));
 $v->passes();   // returns true;
 ```
 
