@@ -1,7 +1,9 @@
-<?php namespace Schuppo\PasswordStrength;
+<?php
 
-class PasswordStrength {
+namespace Schuppo\PasswordStrength;
 
+class PasswordStrength
+{
     public function validateLetters($value)
     {
         return preg_match('/\pL/', $value);
@@ -17,7 +19,7 @@ class PasswordStrength {
         return preg_match('/(\p{Ll}+.*\p{Lu})|(\p{Lu}+.*\p{Ll})/u', $value);
     }
 
-	public function validateSymbols($value)
+    public function validateSymbols($value)
     {
         return preg_match('/[!@#$%^&*?()\-_=+{};:,<.>]/', $value);
     }
