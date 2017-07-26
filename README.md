@@ -15,9 +15,9 @@ The provided validations include:
 - check if input contains mixed case characters
 - check if input contains symbols
 
-#Documentation
+# Documentation
 
-##Installation
+## Installation
 
 ### Get the package
 
@@ -51,7 +51,7 @@ I recently recognized a small conflict in the usage of this package in combinati
 
 The problem is easy to fix though: Just add the service provider of this package in front of the service provider of *unique-with*. In that order both packages work fine.
 
-##Usage
+## Usage
 Now Laravel's native `Validator` is extended by four rules:
 
 - case_diff
@@ -72,7 +72,7 @@ $v->passes();   // returns true;
 
 Notice that you can validate any value with the new rules. The only reason why this package is called "Password Strength Package" is that it describes its foremost purpose.
 
-#History
+# History
 
 **[Laravel 5 / Laravel 4]**
 
@@ -147,13 +147,13 @@ Make package laravel 5 ready
 
 - Fixed: Package validator doesn't overwrite custom validation errror messages any more. Not functional tested though because I have no clue how to set up a test which controls the passing of variables from the password strength package to the native validator INSIDE the package's test folders. Any suggestions?
 
-#License
+# License
 
 This package is under the MIT license. See the complete license:
 
 - [LICENSE](https://github.com/schuppo/PasswordStrengthPackage/LICENSE)
 
 
-##Reporting Issues or Feature Requests
+## Reporting Issues or Feature Requests
 
 Issues and feature requests are tracked on [GitHub](https://github.com/schuppo/PasswordStrengthPackage/issues).
