@@ -29,6 +29,13 @@
             "Schuppo\\PasswordStrength": "src/"
         }
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Schuppo\\PasswordStrength\\PasswordStrengthServiceProvider"
+            ]
+        }
+    },
     "minimum-stability": "dev",
     "license": "MIT"
 }
