@@ -31,7 +31,9 @@ Just ```composer require schuppo/password-strength:"~1.5"```.
 
 ### Initialize the package
 
-To start using the package, you have to add it to the array key `providers` in `app/config/app.php`:
+> If you do run the package on Laravel 5.5+, you can start using the package at this point. [package auto-discovery](https://medium.com/@taylorotwell/package-auto-discovery-in-laravel-5-5-ea9e3ab20518) takes care of the magic of adding the service provider.
+
+If you do not run Laravel 5.5 (or higher), then add the following line under the `providers` array key in *app/config.php*:
 
 ```php
 // app/config/app.php
