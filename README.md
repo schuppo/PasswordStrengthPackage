@@ -33,6 +33,7 @@ Just ```composer require schuppo/password-strength:"~1.5"```.
 
 > If you do run the package on Laravel 5.5+, you can start using the package at this point. [package auto-discovery](https://medium.com/@taylorotwell/package-auto-discovery-in-laravel-5-5-ea9e3ab20518) takes care of the magic of adding the service provider.
 
+
 If you do not run Laravel 5.5 (or higher), then add the following line under the `providers` array key in *app/config.php*:
 
 ```php
@@ -77,6 +78,10 @@ Notice that you can validate any value with the new rules. The only reason why t
 # History
 
 **[Laravel 5 / Laravel 4]**
+
+**[1.10/0.15]**
+
+Adds Chinese and Spanish translation 
 
 **[1.9/0.14]**
 
