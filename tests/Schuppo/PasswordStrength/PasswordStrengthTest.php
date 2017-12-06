@@ -4,7 +4,7 @@ namespace Schuppo\PasswordStrength;
 
 use Illuminate\Translation\ArrayLoader;
 use Illuminate\Translation\Translator;
-use  \Illuminate\Validation\Factory;
+use Illuminate\Validation\Factory;
 
 /**
  * PasswordStrengthTest
@@ -50,11 +50,21 @@ class PasswordStrengthTest extends \PHPUnit_Framework_TestCase
 
     public function test_symbols_succeeds_with_symbol()
     {
-        $validation = $this->validation->make(
-            array( 'password' => '@' ),
-            array( 'password' => 'symbols' )
-        );
-        $this->assertTrue($validation->passes());
+    	$symbols = array(
+    		'!', '@', '#', '$', '%',
+			'^', '&', '*', '?', '(',
+			')', '-', '_, ', '=', '+',
+			'{', '}', ';', ':', ',',
+			'<', '.', '>', '\\', '/'
+		);
+
+    	foreach($symbols as $symbol) {
+			$validation = $this->validation->make(
+				array( 'password' => $symbol ),
+				array( 'password' => 'symbols' )
+			);
+			$this->assertTrue($validation->passes());
+		}
     }
 
     public function test_case_diff_fails_just_lowercase()
@@ -106,7 +116,16 @@ class PasswordStrengthTest extends \PHPUnit_Framework_TestCase
     public function test_numbers_succeeds()
     {
         $validation = $this->validation->make(
-            array( 'password' => '1' ),
+            array( 'password' => 1 ),
+            array( 'password' => 'numbers' )
+        );
+        $this->assertTrue($validation->passes());
+    }
+
+    public function test_numbers_succeeds_float()
+    {
+        $validation = $this->validation->make(
+            array( 'password' => 1.1 ),
             array( 'password' => 'numbers' )
         );
         $this->assertTrue($validation->passes());
