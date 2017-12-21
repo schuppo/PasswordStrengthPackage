@@ -51,20 +51,21 @@ class PasswordStrengthTest extends \PHPUnit_Framework_TestCase
     public function test_symbols_succeeds_with_symbol()
     {
     	$symbols = array(
-    		'!', '@', '#', '$', '%',
-			'^', '&', '*', '?', '(',
-			')', '-', '_, ', '=', '+',
-			'{', '}', ';', ':', ',',
-			'<', '.', '>', '\\', '/'
+            '!', '@', '#', '$', '%',
+            '^', '&', '*', '?', '(',
+            ')', '-', '_, ', '=', '+',
+            '{', '}', ';', ':', ',',
+            '<', '.', '>', '\\', '/',
+            ' ', "\t"
 		);
 
-    	foreach($symbols as $symbol) {
-			$validation = $this->validation->make(
-				array( 'password' => $symbol ),
-				array( 'password' => 'symbols' )
-			);
-			$this->assertTrue($validation->passes());
-		}
+        foreach($symbols as $symbol) {
+            $validation = $this->validation->make(
+                array( 'password' => $symbol ),
+                array( 'password' => 'symbols' )
+            );
+            $this->assertTrue($validation->passes());
+        }
     }
 
     public function test_case_diff_fails_just_lowercase()
