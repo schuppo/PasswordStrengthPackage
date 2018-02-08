@@ -79,6 +79,10 @@ Notice that you can validate any value with the new rules. The only reason why t
 
 **[Laravel 5 / Laravel 4]**
 
+**[1.11/0.16]**
+
+Simplyfies symbol validation
+
 **[1.10/0.15]**
 
 Adds Chinese and Spanish translation 
