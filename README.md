@@ -79,9 +79,9 @@ Notice that you can validate any value with the new rules. The only reason why t
 
 **[Laravel 5 / Laravel 4]**
 
-**[1.11/0.16]**
+**[1.11/-]**
 
-Simplyfies symbol validation
+Simplifies symbol validation
 
 **[1.10/0.15]**
 
