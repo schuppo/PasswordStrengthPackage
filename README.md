@@ -4,7 +4,7 @@ PasswordStrength Package
 [![Total Downloads](https://poser.pugx.org/schuppo/password-strength/downloads)](https://packagist.org/packages/schuppo/password-strength)
 [![License](https://poser.pugx.org/schuppo/password-strength/license)](https://packagist.org/packages/schuppo/password-strength)
 
-This package provides a validator that ensures strong passwords in Laravel 4 & 5 applications. It is influenced  a lot by [PasswordStrengthBundle for Symfony 2](https://github.com/jbafford/PasswordStrengthBundle).
+This package provides a validator that ensures strong passwords in Laravel 4, 5 & 6 applications. It is influenced  a lot by [PasswordStrengthBundle for Symfony 2](https://github.com/jbafford/PasswordStrengthBundle).
 
 It is out now for a while and since there were no complaints it very likely fulfills its purpose.
 
@@ -25,28 +25,13 @@ The provided validations include:
 
 Just ```composer require schuppo/password-strength:"~0.10"```.
 
-**For Laravel 5 users**
+**For Laravel 5/6 users**
 
 Just ```composer require schuppo/password-strength:"~1.5"```.
 
 ### Initialize the package
 
 > If you do run the package on Laravel 5.5+, you can start using the package at this point. [package auto-discovery](https://medium.com/@taylorotwell/package-auto-discovery-in-laravel-5-5-ea9e3ab20518) takes care of the magic of adding the service provider.
-
-
-If you do not run Laravel 5.5 (or higher), then add the following line under the `providers` array key in *app/config.php*:
-
-```php
-// app/config/app.php
-return array(
-    // ...
-    'providers' => array(
-        // ...
-        \Schuppo\PasswordStrength\PasswordStrengthServiceProvider::class,
-    );
-    // ...
-);
-```
 
 **Caution**
 
@@ -78,6 +63,10 @@ Notice that you can validate any value with the new rules. The only reason why t
 # History
 
 **[Laravel 5 / Laravel 4]**
+
+**[1.12/-]**
+
+Enables Laravel 6 support
 
 **[1.11/-]**
 
