@@ -64,6 +64,10 @@ Notice that you can validate any value with the new rules. The only reason why t
 
 **[Laravel 5 / Laravel 4]**
 
+**[1.13/-]**
+
+Removes need for Str facace
+
 **[1.12/-]**
 
 Enables Laravel 6 support
