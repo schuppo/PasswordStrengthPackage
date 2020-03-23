@@ -33,7 +33,7 @@ class PasswordStrengthTest extends TestCase
         $this->validation->extend('numbers', static function ($attribute, $value, $parameters) use ($pS) {
             return $pS->validateNumbers($value);
         });
-        $this->validation->extend('letters', static function($attribute, $value, $parameters) use ($pS){
+        $this->validation->extend('letters', static function($attribute, $value, $parameters) use ($pS) {
             return $pS->validateLetters($value);
         });
     }
