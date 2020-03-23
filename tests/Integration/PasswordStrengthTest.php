@@ -1,17 +1,14 @@
 <?php
 
-namespace Schuppo\PasswordStrength;
+namespace Schuppo\PasswordStrength\Tests\Integration;
 
 use Illuminate\Translation\ArrayLoader;
 use Illuminate\Translation\Translator;
 use Illuminate\Validation\Factory;
+use Schuppo\PasswordStrength\PasswordStrength;
+use Schuppo\PasswordStrength\Tests\TestCase;
 
-/**
- * PasswordStrengthTest
- *
- * @group validators
- */
-class PasswordStrengthTest extends \PHPUnit_Framework_TestCase
+class PasswordStrengthTest extends TestCase
 {
     private $validation;
 
@@ -22,19 +19,21 @@ class PasswordStrengthTest extends \PHPUnit_Framework_TestCase
         $this->validation = new Factory(new Translator(new ArrayLoader(), 'en'));
     }
 
-    public function setUp()
+    public function setUp(): void
     {
+        parent::setUp();
+
         $pS = new PasswordStrength();
-        $this->validation->extend('symbols', function($attribute, $value, $parameters) use ($pS){
+        $this->validation->extend('symbols', static function ($attribute, $value, $parameters) use ($pS) {
             return $pS->validateSymbols($value);
         });
-        $this->validation->extend('case_diff', function($attribute, $value, $parameters) use ($pS){
+        $this->validation->extend('case_diff', static function ($attribute, $value, $parameters) use ($pS) {
             return $pS->validateCaseDiff($value);
         });
-        $this->validation->extend('numbers', function($attribute, $value, $parameters) use ($pS){
+        $this->validation->extend('numbers', static function ($attribute, $value, $parameters) use ($pS) {
             return $pS->validateNumbers($value);
         });
-        $this->validation->extend('letters', function($attribute, $value, $parameters) use ($pS){
+        $this->validation->extend('letters', static function($attribute, $value, $parameters) use ($pS){
             return $pS->validateLetters($value);
         });
     }

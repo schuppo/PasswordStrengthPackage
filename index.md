@@ -25,9 +25,14 @@ The provided validations include:
 
 Just ```composer require schuppo/password-strength:"~0.10"```.
 
-**For Laravel 5 users**
+**For Laravel 5/6 users**
 
 Just ```composer require schuppo/password-strength:"~1.5"```.
+
+**For Laravel 6/7 users**
+> Requires PHP 7.1+
+
+Just ```composer require schuppo/password-strength:"~2.0"```.
 
 ### Initialize the package
 
@@ -38,14 +43,14 @@ If you do not run Laravel 5.5 (or higher), then add the following line under the
 
 ```php
 // app/config/app.php
-return array(
+return [
     // ...
-    'providers' => array(
+    'providers' => [
         // ...
         \Schuppo\PasswordStrength\PasswordStrengthServiceProvider::class,
-    );
+    ],
     // ...
-);
+];
 ```
 
 **Caution**
@@ -66,10 +71,10 @@ Now Laravel's native `Validator` is extended by four rules:
 You can apply these rules as described in the [validation section on Laravel's website](http://laravel.com/docs/validation)
 
 ```php
-$v = Validator::make(array(
+$v = Validator::make([
     'password' => '12345QWERTqwert@',
     'password' => 'case_diff|numbers|letters|symbols'
-));
+]);
 $v->passes();   // returns true;
 ```
 
@@ -77,7 +82,26 @@ Notice that you can validate any value with the new rules. The only reason why t
 
 # History
 
+**[Laravel 6 / Laravel 7]**
+
+**[2.0]**
+
+- Laravel 7 support.
+- Minimum PHP requirement now 7.1
+- Changes folder structure, psr-4 autoload.
+- Updates Travis CI config to test multiple Laravel versions.
+- Support for higher PHPUnit versions.
+- `orchestra/testbench` dev dependency added.
+
 **[Laravel 5 / Laravel 4]**
+
+**[1.13/-]**
+
+Removes need for Str facace
+
+**[1.12/-]**
+
+Enables Laravel 6 support
 
 **[1.11/-]**
 
