@@ -38,7 +38,7 @@ class PasswordStrengthTest extends TestCase
         });
     }
 
-    public function test_symbols_fails_no_symbol()
+    public function test_symbols_fails_no_symbol(): void
     {
         $validation = $this->validation->make(
             [ 'password' => 'tt' ],
@@ -47,7 +47,7 @@ class PasswordStrengthTest extends TestCase
         $this->assertFalse($validation->passes());
     }
 
-    public function test_symbols_succeeds_with_symbol()
+    public function test_symbols_succeeds_with_symbol(): void
     {
     	$symbols = [
             '!', '@', '#', '$', '%',
@@ -67,7 +67,7 @@ class PasswordStrengthTest extends TestCase
         }
     }
 
-    public function test_case_diff_fails_just_lowercase()
+    public function test_case_diff_fails_just_lowercase(): void
     {
         $validation = $this->validation->make(
             [ 'password' => 'tt' ],
@@ -76,7 +76,7 @@ class PasswordStrengthTest extends TestCase
         $this->assertFalse($validation->passes());
     }
 
-    public function test_case_diff_fails_just_uppercase()
+    public function test_case_diff_fails_just_uppercase(): void
     {
         $validation = $this->validation->make(
             [ 'password' => 'TT' ],
@@ -86,7 +86,7 @@ class PasswordStrengthTest extends TestCase
     }
 
     /** @test */
-    public function it_handles_cyrillic_letters()
+    public function it_handles_cyrillic_letters(): void
     {
         $validation = $this->validation->make(
             [ 'password' => 'Ѐѐ' ],
@@ -95,7 +95,7 @@ class PasswordStrengthTest extends TestCase
         $this->assertTrue($validation->passes());
     }
 
-    public function test_case_diff_succeeds()
+    public function test_case_diff_succeeds(): void
     {
         $validation = $this->validation->make(
             [ 'password' => 'Tt' ],
@@ -104,7 +104,7 @@ class PasswordStrengthTest extends TestCase
         $this->assertTrue($validation->passes());
     }
 
-    public function test_numbers_fails()
+    public function test_numbers_fails(): void
     {
         $validation = $this->validation->make(
             [ 'password' => 'T' ],
@@ -113,7 +113,7 @@ class PasswordStrengthTest extends TestCase
         $this->assertFalse($validation->passes());
     }
 
-    public function test_numbers_succeeds()
+    public function test_numbers_succeeds(): void
     {
         $validation = $this->validation->make(
             [ 'password' => 1 ],
@@ -122,7 +122,7 @@ class PasswordStrengthTest extends TestCase
         $this->assertTrue($validation->passes());
     }
 
-    public function test_numbers_succeeds_float()
+    public function test_numbers_succeeds_float(): void
     {
         $validation = $this->validation->make(
             [ 'password' => 1.1 ],
@@ -131,7 +131,7 @@ class PasswordStrengthTest extends TestCase
         $this->assertTrue($validation->passes());
     }
 
-    public function test_letters_fails()
+    public function test_letters_fails(): void
     {
         $validation = $this->validation->make(
             [ 'password' => '1' ],
@@ -140,7 +140,7 @@ class PasswordStrengthTest extends TestCase
         $this->assertFalse($validation->passes());
     }
 
-    public function test_letters_succeeds()
+    public function test_letters_succeeds(): void
     {
         $validation = $this->validation->make(
             [ 'password' => 'T' ],
@@ -149,7 +149,7 @@ class PasswordStrengthTest extends TestCase
         $this->assertTrue($validation->passes());
     }
 
-    public function test_custom_validation_errors_are_not_overwritten()
+    public function test_custom_validation_errors_are_not_overwritten(): void
     {
         $validation = $this->validation->make(
             [ 'password' => '' ],
