@@ -24,10 +24,8 @@ class PasswordStrengthServiceProvider extends ServiceProvider
 
     /**
      * Bootstrap application services.
-     *
-     * @return void
      */
-    public function boot(Factory $validator)
+    public function boot(Factory $validator): void
     {
         $passwordStrength = app('passwordStrength');
         $translator = app('passwordStrength.translationProvider')->get($validator);
