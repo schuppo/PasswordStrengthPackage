@@ -29,6 +29,11 @@ Just ```composer require schuppo/password-strength:"~0.10"```.
 
 Just ```composer require schuppo/password-strength:"~1.5"```.
 
+**For Laravel 6/7 users**
+> Requires PHP 7.1+
+
+Just ```composer require schuppo/password-strength:"~2.0"```.
+
 ### Initialize the package
 
 > If you do run the package on Laravel 5.5+, you can start using the package at this point. [package auto-discovery](https://medium.com/@taylorotwell/package-auto-discovery-in-laravel-5-5-ea9e3ab20518) takes care of the magic of adding the service provider.
@@ -61,6 +66,17 @@ $v->passes();   // returns true;
 Notice that you can validate any value with the new rules. The only reason why this package is called "Password Strength Package" is that it describes its foremost purpose.
 
 # History
+
+**[Laravel 6 / Laravel 7]**
+
+**[2.0]**
+
+- Laravel 7 support.
+- Minimum PHP requirement now 7.1
+- Changes folder structure, psr-4 autoload.
+- Updates Travis CI config to test multiple Laravel versions.
+- Support for higher PHPUnit versions.
+- `orchestra/testbench` dev dependency added.
 
 **[Laravel 5 / Laravel 4]**
 

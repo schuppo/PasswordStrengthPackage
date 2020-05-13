@@ -16,17 +16,23 @@
         }
     ],
     "require": {
-        "php": ">=5.4.0",
-        "illuminate/support": "~5.0|6.*",
-        "illuminate/translation": "^5.1|6.*"
+        "php": ">=7.1.0",
+        "illuminate/support": "^5.1|^6.0|^7.0",
+        "illuminate/translation": "^5.1|6.*|7.*"
     },
     "require-dev": {
-        "illuminate/validation": "~5.0|6.*",
-        "phpunit/phpunit": "^4.8"
+        "illuminate/validation": "~5.1|6.*|7.*",
+        "phpunit/phpunit": "^6.0|^7.0|^8.0",
+        "orchestra/testbench": "^3.5|^4.0|^5.0"
     },
     "autoload": {
-        "psr-0": {
-            "Schuppo\\PasswordStrength": "src/"
+        "psr-4": {
+            "Schuppo\\PasswordStrength\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Schuppo\\PasswordStrength\\Tests\\": "tests/"
         }
     },
     "extra": {
@@ -37,5 +43,8 @@
         }
     },
     "minimum-stability": "dev",
-    "license": "MIT"
+    "license": "MIT",
+    "config": {
+        "discard-changes": true
+    }
 }

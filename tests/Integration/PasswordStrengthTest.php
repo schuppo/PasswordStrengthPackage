@@ -1,17 +1,14 @@
 <?php
 
-namespace Schuppo\PasswordStrength;
+namespace Schuppo\PasswordStrength\Tests\Integration;
 
 use Illuminate\Translation\ArrayLoader;
 use Illuminate\Translation\Translator;
 use Illuminate\Validation\Factory;
+use Schuppo\PasswordStrength\PasswordStrength;
+use Schuppo\PasswordStrength\Tests\TestCase;
 
-/**
- * PasswordStrengthTest
- *
- * @group validators
- */
-class PasswordStrengthTest extends \PHPUnit_Framework_TestCase
+class PasswordStrengthTest extends TestCase
 {
     private $validation;
 
@@ -22,140 +19,142 @@ class PasswordStrengthTest extends \PHPUnit_Framework_TestCase
         $this->validation = new Factory(new Translator(new ArrayLoader(), 'en'));
     }
 
-    public function setUp()
+    public function setUp(): void
     {
+        parent::setUp();
+
         $pS = new PasswordStrength();
-        $this->validation->extend('symbols', function($attribute, $value, $parameters) use ($pS){
+        $this->validation->extend('symbols', static function ($attribute, $value, $parameters) use ($pS) {
             return $pS->validateSymbols($value);
         });
-        $this->validation->extend('case_diff', function($attribute, $value, $parameters) use ($pS){
+        $this->validation->extend('case_diff', static function ($attribute, $value, $parameters) use ($pS) {
             return $pS->validateCaseDiff($value);
         });
-        $this->validation->extend('numbers', function($attribute, $value, $parameters) use ($pS){
+        $this->validation->extend('numbers', static function ($attribute, $value, $parameters) use ($pS) {
             return $pS->validateNumbers($value);
         });
-        $this->validation->extend('letters', function($attribute, $value, $parameters) use ($pS){
+        $this->validation->extend('letters', static function($attribute, $value, $parameters) use ($pS) {
             return $pS->validateLetters($value);
         });
     }
 
-    public function test_symbols_fails_no_symbol()
+    public function test_symbols_fails_no_symbol(): void
     {
         $validation = $this->validation->make(
-            array( 'password' => 'tt' ),
-            array( 'password' => 'symbols' )
+            [ 'password' => 'tt' ],
+            [ 'password' => 'symbols' ]
         );
         $this->assertFalse($validation->passes());
     }
 
-    public function test_symbols_succeeds_with_symbol()
+    public function test_symbols_succeeds_with_symbol(): void
     {
-    	$symbols = array(
+    	$symbols = [
             '!', '@', '#', '$', '%',
             '^', '&', '*', '?', '(',
             ')', '-', '_, ', '=', '+',
             '{', '}', ';', ':', ',',
             '<', '.', '>', '\\', '/',
             ' ', "\t"
-		);
+		];
 
         foreach($symbols as $symbol) {
             $validation = $this->validation->make(
-                array( 'password' => $symbol ),
-                array( 'password' => 'symbols' )
+                [ 'password' => $symbol ],
+                [ 'password' => 'symbols' ]
             );
             $this->assertTrue($validation->passes());
         }
     }
 
-    public function test_case_diff_fails_just_lowercase()
+    public function test_case_diff_fails_just_lowercase(): void
     {
         $validation = $this->validation->make(
-            array( 'password' => 'tt' ),
-            array( 'password' => 'case_diff' )
+            [ 'password' => 'tt' ],
+            [ 'password' => 'case_diff' ]
         );
         $this->assertFalse($validation->passes());
     }
 
-    public function test_case_diff_fails_just_uppercase()
+    public function test_case_diff_fails_just_uppercase(): void
     {
         $validation = $this->validation->make(
-            array( 'password' => 'TT' ),
-            array( 'password' => 'case_diff')
+            [ 'password' => 'TT' ],
+            [ 'password' => 'case_diff' ]
         );
         $this->assertFalse($validation->passes());
     }
 
     /** @test */
-    public function it_handles_cyrillic_letters()
+    public function it_handles_cyrillic_letters(): void
     {
         $validation = $this->validation->make(
-            array( 'password' => 'Ѐѐ' ),
-            array( 'password' => 'case_diff')
+            [ 'password' => 'Ѐѐ' ],
+            [ 'password' => 'case_diff' ]
         );
         $this->assertTrue($validation->passes());
     }
 
-    public function test_case_diff_succeeds()
+    public function test_case_diff_succeeds(): void
     {
         $validation = $this->validation->make(
-            array( 'password' => 'Tt' ),
-            array( 'password' => 'case_diff')
+            [ 'password' => 'Tt' ],
+            [ 'password' => 'case_diff']
         );
         $this->assertTrue($validation->passes());
     }
 
-    public function test_numbers_fails()
+    public function test_numbers_fails(): void
     {
         $validation = $this->validation->make(
-            array( 'password' => 'T' ),
-            array( 'password' => 'numbers' )
+            [ 'password' => 'T' ],
+            [ 'password' => 'numbers' ]
         );
         $this->assertFalse($validation->passes());
     }
 
-    public function test_numbers_succeeds()
+    public function test_numbers_succeeds(): void
     {
         $validation = $this->validation->make(
-            array( 'password' => 1 ),
-            array( 'password' => 'numbers' )
+            [ 'password' => 1 ],
+            [ 'password' => 'numbers' ]
         );
         $this->assertTrue($validation->passes());
     }
 
-    public function test_numbers_succeeds_float()
+    public function test_numbers_succeeds_float(): void
     {
         $validation = $this->validation->make(
-            array( 'password' => 1.1 ),
-            array( 'password' => 'numbers' )
+            [ 'password' => 1.1 ],
+            [ 'password' => 'numbers' ]
         );
         $this->assertTrue($validation->passes());
     }
 
-    public function test_letters_fails()
+    public function test_letters_fails(): void
     {
         $validation = $this->validation->make(
-            array( 'password' => '1' ),
-            array( 'password' => 'letters' )
+            [ 'password' => '1' ],
+            [ 'password' => 'letters' ]
         );
         $this->assertFalse($validation->passes());
     }
 
-    public function test_letters_succeeds()
+    public function test_letters_succeeds(): void
     {
         $validation = $this->validation->make(
-            array( 'password' => 'T' ),
-            array( 'password' => 'letters')
+            [ 'password' => 'T' ],
+            [ 'password' => 'letters' ]
         );
         $this->assertTrue($validation->passes());
     }
 
-    public function test_custom_validation_errors_are_not_overwritten()
+    public function test_custom_validation_errors_are_not_overwritten(): void
     {
         $validation = $this->validation->make(
-            array( 'password' => '' ),
-            array( 'password' => 'required' ),
-            array( 'required' => 'Should not be overwritten.' )
+            [ 'password' => '' ],
+            [ 'password' => 'required' ],
+            [ 'required' => 'Should not be overwritten.' ]
         );
 
         $errorArray = $validation->errors()->get('password');

@@ -5,32 +5,27 @@ namespace Schuppo\PasswordStrength;
 use Illuminate\Contracts\Validation\Factory;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
-use Illuminate\Translation\Translator;
 
 class PasswordStrengthServiceProvider extends ServiceProvider
 {
     /**
      * Register the service provider.
-     *
-     * @return void
      */
-    public function register()
+    public function register(): void
     {
-        app()->singleton('passwordStrength', function () {
+        app()->singleton('passwordStrength', static function () {
             return new PasswordStrength();
         });
 
-        app()->singleton('passwordStrength.translationProvider', function () {
+        app()->singleton('passwordStrength.translationProvider', static function () {
             return new PasswordStrengthTranslationProvider();
         });
     }
 
     /**
      * Bootstrap application services.
-     *
-     * @return void
      */
-    public function boot(Factory $validator)
+    public function boot(Factory $validator): void
     {
         $passwordStrength = app('passwordStrength');
         $translator = app('passwordStrength.translationProvider')->get($validator);
@@ -38,7 +33,7 @@ class PasswordStrengthServiceProvider extends ServiceProvider
         foreach(['letters', 'numbers', 'caseDiff', 'symbols'] as $rule) {
             $snakeCasedRule = Str::snake($rule);
 
-            $validator->extend($rule, function ($_, $value, $__) use ($passwordStrength, $rule) {
+            $validator->extend($rule, static function ($_, $value, $__) use ($passwordStrength, $rule) {
                 $capitalizedRule = ucfirst($rule);
                 return call_user_func([$passwordStrength, "validate{$capitalizedRule}"], $value);
             }, $translator->get("password-strength::validation.{$snakeCasedRule}"));

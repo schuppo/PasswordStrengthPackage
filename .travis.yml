@@ -1,12 +1,25 @@
 language: php
 
 php:
-  - 5.6
   - 7.2
   - 7.3
   - 7.4
 
-before_script:
-  - composer install
+env:
+  matrix:
+    - LARAVEL_VERSION=5.*
+    - LARAVEL_VERSION=6.*
+    - LARAVEL_VERSION=7.*
 
-script: phpunit
+matrix:
+  fast_finish: true
+
+sudo: false
+
+install:
+  - travis_retry composer install --no-interaction --prefer-source --no-suggest
+  - if [ "$LARAVEL_VERSION" != "" ]; then composer require --dev "laravel/framework:${LARAVEL_VERSION}" --no-update; fi;
+  - composer update
+
+script:
+  - $TRAVIS_BUILD_DIR/vendor/bin/phpunit
