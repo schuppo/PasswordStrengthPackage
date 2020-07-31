@@ -69,6 +69,10 @@ Notice that you can validate any value with the new rules. The only reason why t
 
 **[Laravel 6 / Laravel 7]**
 
+**[2.1]**
+
+- Added Turkish translation
+
 **[2.0]**
 
 - Laravel 7 support.
