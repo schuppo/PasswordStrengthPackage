@@ -21,18 +21,18 @@ The provided validations include:
 
 ### Get the package
 
-**For Laravel 4 users**
+**For Laravel 6/7 users**
+> Requires PHP 7.1+
 
-Just ```composer require schuppo/password-strength:"~0.10"```.
+Just ```composer require schuppo/password-strength:"~2.0"```.
 
 **For Laravel 5/6 users**
 
 Just ```composer require schuppo/password-strength:"~1.5"```.
 
-**For Laravel 6/7 users**
-> Requires PHP 7.1+
+**For Laravel 4 users**
 
-Just ```composer require schuppo/password-strength:"~2.0"```.
+Just ```composer require schuppo/password-strength:"~0.10"```.
 
 ### Initialize the package
 
@@ -67,7 +67,14 @@ Notice that you can validate any value with the new rules. The only reason why t
 
 # History
 
-**[Laravel 6 / Laravel 7]**
+**[Laravel 6 / 7 / 8]**
+
+**[2.2]**
+
+- Added support for Laravel 8
+
+
+**[Laravel 6 / Laravel 7 ]**
 
 **[2.1]**
 
