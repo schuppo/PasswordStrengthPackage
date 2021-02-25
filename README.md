@@ -68,6 +68,12 @@ Notice that you can validate any value with the new rules. The only reason why t
 # History
 
 **[Laravel 6 / 7 / 8]**
+
+**[2.4]**
+
+- Added Finish and Italian translations
+
+
 **[2.3]**
 
 - Added Swedish and Norwegian translations
