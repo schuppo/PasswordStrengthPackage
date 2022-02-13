@@ -4,7 +4,7 @@ jobs:
     runs-on: ${{ matrix.operating-system }}
     strategy:
       matrix:
-        operating-system: ['ubuntu-latest', 'windows-latest', 'macos-latest']
+        operating-system: ['ubuntu-latest', 'macos-latest']
         php-versions: ['7.4', '8.0', '8.1']
         phpunit-versions: ['latest']
         include:
