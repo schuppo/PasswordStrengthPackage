@@ -69,7 +69,12 @@ Notice that you can validate any value with the new rules. The only reason why t
 
 **[Laravel 6 - 9]**
 
+**[2.6]**
+
+- Added Thai translation
+
 **[2.5]**
+
 - Added support for Laravel 9
 
 **[2.4]**
