@@ -4,7 +4,7 @@ PasswordStrength Package
 [![Total Downloads](https://poser.pugx.org/schuppo/password-strength/downloads)](https://packagist.org/packages/schuppo/password-strength)
 [![License](https://poser.pugx.org/schuppo/password-strength/license)](https://packagist.org/packages/schuppo/password-strength)
 
-This package provides a validator that ensures strong passwords in Laravel 4, 5 & 6 applications. It is influenced  a lot by [PasswordStrengthBundle for Symfony 2](https://github.com/jbafford/PasswordStrengthBundle).
+This package provides a validator that ensures strong passwords in Laravel 4 - 9 applications. It is influenced  a lot by [PasswordStrengthBundle for Symfony 2](https://github.com/jbafford/PasswordStrengthBundle).
 
 It is out now for a while and since there were no complaints it very likely fulfills its purpose.
 
@@ -21,7 +21,7 @@ The provided validations include:
 
 ### Get the package
 
-**For Laravel 6/7 users**
+**For Laravel 6 - 9 users**
 > Requires PHP 7.1+
 
 Just ```composer require schuppo/password-strength:"~2.0"```.
@@ -40,7 +40,7 @@ Just ```composer require schuppo/password-strength:"~0.10"```.
 
 **Caution**
 
-I recently recognized a small conflict in the usage of this package in combination with [unique-with](https://github.com/felixkiss/uniquewith-validator): One runs into problems when adding the ```PasswordStrengthServiceProvider``` **after** ```UniqueWithValidatorServiceProvider``` to the providers array, the  rules of this package stay unknown to the Laravel ```Validator```.
+I recognized a small conflict in the usage of this package in combination with [unique-with](https://github.com/felixkiss/uniquewith-validator): One runs into problems when adding the ```PasswordStrengthServiceProvider``` **after** ```UniqueWithValidatorServiceProvider``` to the providers array, the  rules of this package stay unknown to the Laravel ```Validator```.
 
 The problem is easy to fix though: Just add the service provider of this package in front of the service provider of *unique-with*. In that order both packages work fine.
 
@@ -67,7 +67,10 @@ Notice that you can validate any value with the new rules. The only reason why t
 
 # History
 
-**[Laravel 6 / 7 / 8]**
+**[Laravel 6 - 9]**
+
+**[2.5]**
+- Added support for Laravel 9
 
 **[2.4]**
 
