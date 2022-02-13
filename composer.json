@@ -12,16 +12,16 @@
     "authors": [
         {
             "name": "Oliver Schupp",
-            "email": "oliver.schupp@yahoo.de"
+            "email": "post@schuppo.io"
         }
     ],
     "require": {
         "php": ">=7.1.0",
-        "illuminate/support": "^5.1|^6.0|^7.0|^8.0",
-        "illuminate/translation": "^5.1|6.*|7.*|8.*"
+        "illuminate/support": "^5.1|^6.0|^7.0|^8.0|^9.0",
+        "illuminate/translation": "^5.1|6.*|7.*|8.*|9.*"
     },
     "require-dev": {
-        "illuminate/validation": "~5.1|6.*|7.*|8.*",
+        "illuminate/validation": "~5.1|6.*|7.*|8.*|9.*",
         "phpunit/phpunit": "^6.0|^7.0|^8.0",
         "orchestra/testbench": "^3.5|^4.0|^5.0|^6.0"
     },
