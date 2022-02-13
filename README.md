@@ -1,6 +1,6 @@
 PasswordStrength Package
 ================
-[![Build Status](https://travis-ci.org/schuppo/PasswordStrengthPackage.png?branch=2.x)](https://travis-ci.org/schuppo/PasswordStrengthPackage)
+![Build Status](https://github.com/schuppo/PasswordStrengthPackage/actions/workflows/unit_test.yml/badge.svg)
 [![Total Downloads](https://poser.pugx.org/schuppo/password-strength/downloads)](https://packagist.org/packages/schuppo/password-strength)
 [![License](https://poser.pugx.org/schuppo/password-strength/license)](https://packagist.org/packages/schuppo/password-strength)
 
