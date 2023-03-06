@@ -6,7 +6,7 @@ jobs:
       matrix:
         operating-system: ['ubuntu-latest']
         php-versions: ['7.4', '8.0', '8.1']
-        phpunit-versions: ['latest']
+        phpunit-versions: ['latest', 8.1]
         include:
           - operating-system: 'ubuntu-latest'
             php-versions: '7.2'
